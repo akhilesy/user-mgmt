@@ -114,11 +114,22 @@ ResponseEntity<Object> getAllSocialMedia(){
 
     @PostMapping(path = "/add-site", consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<Object> addSte(@RequestBody SiteRequModel menuObj){
-
+        ResponceModel <SiteMaster> responce;
         if(menuObj!=null){
 
             SiteMaster master= masterServices.addSite(menuObj);
-            return ResponseEntity.ok().body("Site added successfully menu id"+master.getSiteName());
+            if(master!=null){
+                responce=new ResponceModel<>(HttpStatus.CREATED
+                ,ApplicationCnstant.SITE_ADDED,master);
+
+                return ResponseEntity.ok().body(responce);
+            }else{
+                responce=new ResponceModel<>(HttpStatus.INTERNAL_SERVER_ERROR
+                        ,ApplicationCnstant.SITE_NOT_ADDED,master);
+
+                return ResponseEntity.internalServerError().body(responce);
+            }
+
         }else {
             return ResponseEntity.badRequest().body("Site not added");
         }

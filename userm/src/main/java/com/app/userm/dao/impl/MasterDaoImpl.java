@@ -1,6 +1,7 @@
 package com.app.userm.dao.impl;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -68,7 +69,8 @@ public class MasterDaoImpl implements MasterDao {
      */
     @Override
     public List<MenuMaster> getMenuByRole(Integer role) {
-        return menuRepo.findByRoleRoleId(role);
+       // return menuRepo.findByRoleRoleId(role);
+        return Collections.emptyList();
     }
 
     /**

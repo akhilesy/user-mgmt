@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface MenuMasterRepo extends CrudRepository<MenuMaster , Integer> {
 
-    List<MenuMaster> findByRoleRoleId(Integer roleId);
+
 }

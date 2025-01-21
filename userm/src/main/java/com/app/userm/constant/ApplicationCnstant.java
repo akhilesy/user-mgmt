@@ -19,8 +19,8 @@ public class ApplicationCnstant {
     public static final String USER_ID_OR_ROLE_NOT_CORRECT="Please provide correct  details";
     public static final String BODY_ERROR="Please check request body";
     public static final String BAD_REQUEST="Please check request body";
-
-
+    public static final String SITE_NOT_ADDED="Site  not added successfully";
+    public static final String SITE_ADDED="Site added successfully";
     public static final String CONTECT_US_SAVE="Your information is save some of from team will connect";
 
 
