@@ -23,7 +23,7 @@ public class EmployeeController {
     AttandanceService attandanceService;
     //create employee
 
-    @PostMapping("/create")
+    @PostMapping("/addEmployee")
     ResponseEntity<Object> createEmployee(@RequestBody EmployeeRequest request) {
 
         ResponceModel<EmployeeDetails> responce;
@@ -82,10 +82,10 @@ public class EmployeeController {
     //getEmployee by aadhar
 
     @PostMapping("/getByaadhar")
-    ResponseEntity<Object> getEmployeeByAadhar(@RequestBody GetAadharRequest request) {
+    ResponseEntity<Object> getEmployeeByAadhar(@RequestBody String aadhar) {
 
         ResponceModel<EmployeeDetails> responce;
-        EmployeeDetails empDetails  = employeeService.getEmployeeByAadhar(request.getAadhar());
+        EmployeeDetails empDetails  = employeeService.getEmployeeByAadhar(aadhar);
 
         if(empDetails!=null){
             responce = new ResponceModel<>(HttpStatus.FOUND, ApplicationCnstant.DATA_FOUND, empDetails);

@@ -16,8 +16,6 @@ import com.app.userm.dao.MasterDao;
 @Repository
 public class MasterDaoImpl implements MasterDao {
 
-    @Autowired
-    private RoleMasterRepo roleRepo;
 
     @Autowired
     private MenuMasterRepo menuRepo;
@@ -35,56 +33,6 @@ public class MasterDaoImpl implements MasterDao {
 
     @Autowired
     private SiteRepo siteRepo;
-    /**
-     * @param roleMaster
-     * @return
-     */
-    @Override
-    public RoleMaster addNewRole(RoleMaster roleMaster) {
-
-        addRoleMasterData(roleMaster);
-       return roleRepo.save(roleMaster);
-
-    }
-
- RoleMaster addRoleMasterData(RoleMaster master){
-     master.setCreatedBy(ApplicationCnstant.BASE_USER);
-     master.setIsActive(Boolean.TRUE);
-     master.setIsDeleted(Boolean.FALSE);
-     master.setCreatedDate(LocalDate.now());
-        return master;
-    }
-
-    /**
-     * @param roleList
-     * @return
-     */
-    @Override
-    public boolean addMultipleRole(List<RoleMaster> roleList) {
-        for(RoleMaster role:roleList){
-            addRoleMasterData(role);
-        }
-        List<RoleMaster> saveRoles= (List<RoleMaster>) roleRepo.saveAll(roleList);
-
-        return !saveRoles.isEmpty();
-    }
-
-    /**
-     * @return
-     */
-    @Override
-    public List<RoleMaster> getAllRole() {
-        return (List<RoleMaster>) roleRepo.findAll();
-    }
-
-    /**
-     * @param roleId
-     * @return
-     */
-    @Override
-    public Optional<RoleMaster> getRoleByRole(Integer roleId) {
-        return roleRepo.findById(roleId);
-    }
 
     /**
      * @param menu

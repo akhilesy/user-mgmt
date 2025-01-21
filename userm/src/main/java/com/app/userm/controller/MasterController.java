@@ -21,28 +21,6 @@ public class MasterController {
     @Autowired
     private MasterServices masterServices;
 
-    @PostMapping(path = "/add-role",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> addNewRole(@RequestBody  RoleRequestObject roleRequest){
-        if(roleRequest!=null){
-            masterServices.addNewRole(roleRequest);
-            return new ResponseEntity<>("Role Added successfully", HttpStatus.OK);
-
-        }
-
-        return new ResponseEntity<>("Role Not Added ", HttpStatus.BAD_REQUEST);
-    }
-
-    @GetMapping(path = "/getAllRole", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> getAllRoles() {
-        // Retrieve the list of roles from the service
-        List<RoleMaster> roleMasters = masterServices.getAllRole();
-        // Check if the list is not empty and return OK with the list
-        if (roleMasters != null && !roleMasters.isEmpty()) {
-            return ResponseEntity.ok(roleMasters);
-        }
-        // Return NOT_FOUND status with a message if no roles are found
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No roles found.");
-    }
     @PostMapping(path = "/add-menu", consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<Object> addNewMenu(@RequestBody MenuRequestObject menuObj){
 

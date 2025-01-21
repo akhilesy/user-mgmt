@@ -8,11 +8,6 @@ import java.util.Optional;
 
 public interface MasterDao {
 
-    RoleMaster addNewRole(RoleMaster roleMaster);
-    boolean addMultipleRole(List<RoleMaster> roleList);
-
-    List<RoleMaster> getAllRole();
-    Optional<RoleMaster> getRoleByRole(Integer roleId);
 
 
     MenuMaster addMenu(MenuMaster menu);

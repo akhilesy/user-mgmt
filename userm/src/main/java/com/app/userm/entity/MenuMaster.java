@@ -33,11 +33,6 @@ public class MenuMaster {
     @Column(name = "menu_url", length = 100)
     private String menuUrl;
 
-    // Relationship with Role entity
-    @ManyToOne
-    @JoinColumn(name = "roleId", referencedColumnName = "roleId", nullable = false)
-    private RoleMaster role;
-
     @Column(name = "sub_menu")
     private String subMenu;
 

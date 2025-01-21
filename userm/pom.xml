@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app</groupId>
-	<artifactId>userm</artifactId>
+	<artifactId>EmployeeManagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>userm</name>
 	<description>user management project</description>
