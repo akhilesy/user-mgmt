@@ -137,7 +137,7 @@ ResponseEntity<Object> getAllSocialMedia(){
 
     }
 
-    @GetMapping(path = "allSite")
+    @GetMapping(path = "/allSite")
     ResponseEntity<Object> getAllSites(){
         ResponceModel <List<SiteMaster>> responce;
         List<SiteMaster> listInfo=masterServices.getAllSite();

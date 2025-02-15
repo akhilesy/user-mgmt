@@ -8,10 +8,11 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "attendance")
-public class Attendance {
+public class
+Attendance {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Use IDENTITY strategy
     private Long id;
 
     @Column(name = "employee_id", nullable = false)
@@ -20,8 +21,8 @@ public class Attendance {
     @Column(name = "attandance_date", nullable = false)
     private LocalDateTime attandanceDate;
 
-    @Column(name = "site_code", nullable = false, length = 100)
-    private String siteCode;
+    @Column(name = "site_code", nullable = false)
+    private Integer siteCode;
 
     @Column(name = "is_present", nullable = false)
     private boolean isPresent;

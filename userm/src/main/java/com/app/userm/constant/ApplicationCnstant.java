@@ -23,6 +23,7 @@ public class ApplicationCnstant {
     public static final String SITE_ADDED="Site added successfully";
     public static final String CONTECT_US_SAVE="Your information is save some of from team will connect";
 
-
+    public static final String RECORD_UPDATED="Record updated successfully";
+    public static final String RECORD_NOT_UPDATED="Record not updated";
 
 }

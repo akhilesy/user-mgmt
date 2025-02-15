@@ -28,8 +28,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     public EmployeeDetails saveEmployee(EmployeeRequest request) throws CustomException {
 
 
-        if(getEmployeeByAadhar(request.getAadharNumber())!=null)
-              throw new CustomException("user already exist");
+      //  if(getEmployeeByAadhar(request.getAadharNumber())!=null)
+             // throw new CustomException("user already exist");
 
         EmployeeDetails employeeDetail=new EmployeeDetails();
 
